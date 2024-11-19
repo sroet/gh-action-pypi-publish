@@ -149,7 +149,9 @@ runs:
         steps.pre-installed-python.outputs.python-path == ''
         && steps.new-python.outputs.python-path
         || steps.pre-installed-python.outputs.python-path
-      }} '${{ github.action_path }}/create-docker-action.py'
+      }} '$GITHUB_ACTION_PATH/create-docker-action.py'
+      # Use proposed workaround for ${{ github.action_path }} not working inside containers
+      # https://github.com/actions/runner/issues/2185#issuecomment-1683545859
     env:
       REF: ${{ steps.set-repo-and-ref.outputs.ref }}
       REPO: ${{ steps.set-repo-and-ref.outputs.repo }}
