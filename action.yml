@@ -149,7 +149,7 @@ runs:
         steps.pre-installed-python.outputs.python-path == ''
         && steps.new-python.outputs.python-path
         || steps.pre-installed-python.outputs.python-path
-      }} '$GITHUB_ACTION_PATH/create-docker-action.py'
+      }} "${GITHUB_ACTION_PATH}"/create-docker-action.py
       # Use proposed workaround for ${{ github.action_path }} not working
       # inside containers
       # https://github.com/actions/runner/issues/2185#issuecomment-1683545859
