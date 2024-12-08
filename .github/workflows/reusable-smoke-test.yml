@@ -81,7 +81,9 @@ jobs:
     - name: Install the OS-level tools
       if: >-
         matrix.container != ''
-      run: apt update --yes && apt install --yes cargo
+      run: >-
+        apt update --yes &&
+        apt install --yes cargo python3 python-is-python3
     - name: Install the packaging-related tools
       run: python3 -m pip install build twine --prefer-binary
       env:
