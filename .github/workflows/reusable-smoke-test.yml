@@ -137,7 +137,7 @@ jobs:
         for dist in dist/*.tar.gz
         do
           echo "Registering ${dist}..."
-          twine register "${dist}"
+          python3 -m twine register "${dist}"
         done
       env:
         TWINE_USERNAME: ${{ env.devpi-username }}
