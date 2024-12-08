@@ -79,6 +79,7 @@ jobs:
       with:
         path: test
     - name: Install the OS-level tools
+      if: fromJSON(matrix.container)
       run: apt update --yes && apt install --yes cargo
     - name: Install the packaging-related tools
       run: python3 -m pip install build twine --prefer-binary
