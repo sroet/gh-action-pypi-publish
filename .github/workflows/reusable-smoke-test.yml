@@ -86,6 +86,8 @@ jobs:
         apt install --yes cargo
     - name: Ensure Python is there
       uses: actions/setup-python@v5
+      with:
+        python-version: 3.x
     - name: Install the packaging-related tools
       run: python3 -m pip install build twine --prefer-binary --user
       env:
