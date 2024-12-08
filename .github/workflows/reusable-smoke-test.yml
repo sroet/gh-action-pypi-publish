@@ -137,7 +137,11 @@ jobs:
         TWINE_USERNAME: ${{ env.devpi-username }}
         TWINE_PASSWORD: ${{ env.devpi-password }}
         TWINE_REPOSITORY_URL: >-
-          http://devpi:${{ env.devpi-port }}/${{ env.devpi-username }}/public/
+          http://devpi:${{
+            job.services.devpi.ports[env.devpi-port]
+          }}/${{
+            env.devpi-username
+          }}/public/
     - name: ✅ Smoke-test the locally checked out action
       uses: ./test
       env:
