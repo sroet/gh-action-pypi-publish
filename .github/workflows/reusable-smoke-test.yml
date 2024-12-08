@@ -53,7 +53,15 @@ jobs:
 
   smoke-test:
 
+    strategy:
+      matrix:
+        container:
+        - ''
+        - python:3.12-slim
+
     runs-on: ubuntu-latest
+
+    container: ${{ matrix.container }}
 
     services:
       devpi:
