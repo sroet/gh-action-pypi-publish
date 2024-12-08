@@ -57,7 +57,7 @@ jobs:
       matrix:
         container:
         - ''  # empty string == no container
-        - python:3.12-slim
+        - ubuntu:latest
 
     runs-on: ubuntu-latest
 
