@@ -56,7 +56,7 @@ jobs:
     strategy:
       matrix:
         container:
-        - ''
+        - ''  # empty string == no container
         - python:3.13-slim
 
     runs-on: ubuntu-latest
