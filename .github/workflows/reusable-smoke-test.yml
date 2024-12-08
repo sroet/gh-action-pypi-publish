@@ -79,7 +79,7 @@ jobs:
       with:
         path: test
     - name: Install the packaging-related tools
-      run: python3 -m pip install build twine
+      run: python3 -m pip install build twine --prefer-binary
       env:
         PIP_CONSTRAINT: test/requirements/runtime.txt
     - name: Create the stub package importable directory
